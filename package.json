@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "jest",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit"
@@ -11,12 +12,17 @@
     "vue": "^3.2.13"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.9",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-typescript": "^7.24.7",
     "@vue/cli-plugin-unit-jest": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "@vue/test-utils": "^2.0.0-0",
+    "@vue/test-utils": "^2.4.6",
     "@vue/vue3-jest": "^27.0.0-alpha.1",
-    "babel-jest": "^27.0.6",
-    "jest": "^27.0.5"
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "vue3-jest": "^27.0.0-alpha.1"
   },
   "browserslist": [
     "> 1%",
