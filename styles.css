@@ -1,0 +1,397 @@
+ /* Estilo geral */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'F29LT Riwaya Italic', sans-serif;
+}
+
+@font-face {
+    font-family: "F29LT Riwaya Italic";
+    src: url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.eot");
+    src: url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.eot?#iefix") format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.woff2") format("woff2"),
+        url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.woff") format("woff"),
+        url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.ttf") format("truetype"),
+        url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.svg#F29LT Riwaya Italic") format("svg");
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 10px 0;
+    background-color: #fff;
+    color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    height: 40px;
+}
+
+header nav li {
+    display: inline;
+    margin-left: 32px;
+}
+
+header nav li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #F0663E;
+}
+
+header nav li a:hover {
+    color: black;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilo da seção de banner */
+#banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/img/background.avif') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+#banner .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+#banner .welcome {
+    font-size: 42px;
+    margin: 0 0 20px;
+}
+
+/* Estilo da seção "Sobre nós" */
+#sobre {
+    padding: 40px 0;
+    background-color: #F0663E;
+}
+
+#sobre .container {
+    display: flex;
+}
+
+.app_truckme {
+    max-width: 280px;
+    margin-right: 50px;
+}
+
+.sobre__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.sobre__caption {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    text-align: start;
+    margin-top: 40px;
+}
+
+.sobre__title__description {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: justify;
+    color: #fff;
+}
+
+#sobre .btn-read-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #FBF7F7;
+    color: black;
+    text-decoration: none;
+    border-radius: 50px;
+    float: left;
+    cursor: pointer;
+}
+
+#sobre .btn-read-more:hover {
+    background: #f18b6d;
+}
+
+/* Estilo da seção de serviços */
+#servicos {
+    background-color: #FBF7F7;
+    padding: 50px 0;
+}
+
+.servicos__section {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #a363aa;
+    font-weight: bold;
+}
+
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.card__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card__img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card__description, .card__preco {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Estilo da galeria de fotos */
+#gallery__section {
+    background-color: #FBF7F7;
+    padding-bottom: 90px;
+}
+
+.servicos__gallery {
+    font-size: 24px;
+    color: #a363aa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.gallery {
+    width: 900px;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}
+
+.gallery div img {
+    width: 100%;
+    filter: grayscale(100%);
+    transform: transform 0.5s;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+#backBtn, #nextBtn {
+    width: 50px;
+    cursor: pointer;
+    margin: 40px;
+}
+
+.gallery div img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Estilo da seção de contatos */
+#contatos {
+    background: linear-gradient(#ffdad5, #fff7f9);
+}
+
+.contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title h2 {
+    font-weight: 600;
+    color: #a363aa;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #a363aa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+    resize: none;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+    color: #a9a9a9;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    cursor: pointer;
+}
+
+.contact-left button img {
+    height: 15px;
+}
+
+.contact-right img {
+    width: 500px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    #sobre .container {
+        flex-direction: column;
+    }
+
+    #sobre .sobre__description {
+        margin-left: 0;
+    }
+
+    .card__item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .gallery-wrap {
+        flex-direction: column;
+    }
+
+    #backBtn, #nextBtn {
+        margin: 10px 0;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-left {
+        margin-right: 0;
+    }
+}
