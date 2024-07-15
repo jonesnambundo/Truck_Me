@@ -1,5 +1,5 @@
 # Projeto
-Neste Branch estão os projectos em Vues os seus Componentes e tets.
+Neste Branch estão os projectos em Vues os seus Componentes e tests. Unitários.
 Os componentes definidos forma: 
 
 ## AboutComponent
