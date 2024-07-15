@@ -15,10 +15,9 @@ Formulário de contato para os usuários se comunicarem diretamente com a empres
 HTML5
 CSS3 (incluindo flexbox e grid layout)
 JavaScript (ECMAScript 6)
-## Bibliotecas Externas: Font Awesome para ícones e Web3Forms para formulário de contato.
-Responsividade
-
-## O projeto é totalmente responsivo, adaptando-se a diferentes tamanhos de tela, desde dispositivos móveis até desktops, utilizando media queries para garantir uma experiência consistente em todos os dispositivos.
+## Bibliotecas Externas: Font Awesome para ícones  e Web3Forms para formulário de contato.
+## Responsividade
+O projeto é totalmente responsivo, adaptando-se a diferentes tamanhos de tela, desde dispositivos móveis até desktops, utilizando media queries para garantir uma experiência consistente em todos os dispositivos.
 Responsividade do Menu: O estilo do cabeçalho e o comportamento responsivo do menu foram configurados para garantir uma boa experiência de usuário em diferentes tamanhos de tela.
 ## Menu Hambúrguer e Navegação
 O menu é projetado para ser responsivo e adaptar-se a diferentes larguras de tela:
