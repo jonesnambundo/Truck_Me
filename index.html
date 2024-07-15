@@ -14,14 +14,17 @@
     <header>
         <div class="container">
             <img src="./img/logo.jpg" alt="TruckMe Logo" id="logo">
-            <nav>
-                <ul>
-                    <li><a href="#banner">Home</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#contatos">Contatos</a></li>
-                </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
             </nav>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
         </div>
     </header>
     <section id="banner">
@@ -43,12 +46,12 @@
                     objetivando dinamizar o dia a dia dos nossos clientes e trazer muito mais economia.
                 </p>
                 <div id="more-text" style="display:none;">
-                    <h1 class="sobre__caption">Nossa Missão</h2>
-                        <p class="sobre__title__description">
-                            Nossa missão é transformar o transporte de cargas em uma experiência simples,
-                            prática e eficiente. Estamos comprometidos em oferecer um serviço
-                            confiável, seguro e acessível para todos os nossos clientes.
-                        </p>
+                    <h1 class="sobre__caption">Nossa Missão</h1>
+                    <p class="sobre__title__description">
+                        Nossa missão é transformar o transporte de cargas em uma experiência simples,
+                        prática e eficiente. Estamos comprometidos em oferecer um serviço
+                        confiável, seguro e acessível para todos os nossos clientes.
+                    </p>
                 </div>
                 <button id="read-more-btn" class="btn-read-more">Leia mais</button>
             </div>
@@ -73,8 +76,7 @@
                             <td>Gestão de Transporte</td>
                             <td>
                                 <div class="card__item">
-                                    <img class="card__img" src="./img/serviços/logistica.PNG"
-                                        alt="Gestão de Transporte">
+                                    <img class="card__img" src="./img/serviços/logistica.PNG" alt="Gestão de Transporte">
                                 </div>
                             </td>
                             <td>Monitoramento e controle de operações logísticas.</td>
@@ -95,8 +97,7 @@
                             <td>Transporte de Cargas</td>
                             <td>
                                 <div class="card__item">
-                                    <img class="card__img" src="./img/serviços/trasnporte.jfif"
-                                        alt="Transporte de Cargas">
+                                    <img class="card__img" src="./img/serviços/trasnporte.jfif" alt="Transporte de Cargas">
                                 </div>
                             </td>
                             <td>Soluções de frete para diversos tipos de carga.</td>
@@ -111,20 +112,20 @@
         <div class="container">
             <h2 class="servicos__gallery">Galleria de Fotos</h2>
             <div class="gallery-wrap">
-                <img src="./img/carrousel/back.png" id="backBtn">
+                <img src="./img/carrousel/back.png" id="backBtn" alt="Voltar">
                 <div class="gallery">
                     <div>
-                        <span><img src="./img/carrousel/1.jpg" alt="" srcset=""></span>
-                        <span><img src="./img/carrousel/2.jpg" alt="" srcset=""></span>
-                        <span><img src="./img/carrousel/3.jpg" alt="" srcset=""></span>
+                        <span><img src="./img/carrousel/1.jpg" alt="Imagem 1"></span>
+                        <span><img src="./img/carrousel/2.jpg" alt="Imagem 2"></span>
+                        <span><img src="./img/carrousel/3.jpg" alt="Imagem 3"></span>
                     </div>
                     <div>
-                        <span><img src="./img/carrousel/4.jpg" alt="" srcset=""></span>
-                        <span><img src="./img/carrousel/5.jpg" alt="" srcset=""></span>
-                        <span><img src="./img/carrousel/6.jpg" alt="" srcset=""></span>
+                        <span><img src="./img/carrousel/4.jpg" alt="Imagem 4"></span>
+                        <span><img src="./img/carrousel/5.jpg" alt="Imagem 5"></span>
+                        <span><img src="./img/carrousel/6.jpg" alt="Imagem 6"></span>
                     </div>
                 </div>
-                <img src="./img/carrousel/next.png" id="nextBtn">
+                <img src="./img/carrousel/next.png" id="nextBtn" alt="Próximo">
             </div>
         </div>
     </section>
@@ -133,17 +134,17 @@
             <div class="contact-container">
                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" id="contact-form">
                     <div class="contact-left-title">
-                        <h2>Contactos</h2>
+                        <h2>Contatos</h2>
                         <hr>
                     </div>
                     <input type="hidden" name="access_key" value="4b419ad7-41aa-4f73-9f43-cb8dedc0b2f4">
-                    <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
-                    <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
-                    <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-                    <button type="submit">Submit <img src="/assets/arrow_icon.png" alt=""></button>
+                    <input type="text" name="name" placeholder="Seu nome" class="contact-inputs" required>
+                    <input type="email" name="email" placeholder="Seu email" class="contact-inputs" required>
+                    <textarea name="message" placeholder="Sua mensagem" class="contact-inputs" required></textarea>
+                    <button type="submit">Enviar <img src="/assets/arrow_icon.png" alt="Ícone de seta"></button>
                 </form>
                 <div class="contact-right">
-                    <img src="/assets/right_img.png" alt="" srcset="">
+                    <img src="/assets/right_img.png" alt="Imagem de contato">
                 </div>
             </div>
         </div>

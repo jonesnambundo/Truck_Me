@@ -1,9 +1,10 @@
- /* Estilo geral */
- * {
+/* Estilo geral */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'F29LT Riwaya Italic', sans-serif;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -15,7 +16,6 @@
         url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.ttf") format("truetype"),
         url("https://db.onlinewebfonts.com/t/a831675c355af267d4dade89bf89e1f2.svg#F29LT Riwaya Italic") format("svg");
 }
-
 /* Estilo do cabeçalho */
 header {
     padding: 10px 0;
@@ -26,44 +26,99 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-header img {
+#logo {
     height: 40px;
 }
 
-header nav li {
-    display: inline;
-    margin-left: 32px;
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-header nav li a {
+nav {
+    transition: max-height 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 16px;
+    display: inline;
+}
+
+nav a {
     text-decoration: none;
     font-size: 18px;
     color: #F0663E;
 }
 
-header nav li a:hover {
+nav a:hover {
     color: black;
+    transition: color 0.3s;
 }
 
 .container {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-}
-
-header .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
-/* Estilo da seção de banner */
-#banner {
+.no-scroll {
+    overflow-x: hidden;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 720px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    nav.open {
+        display: block;
+        max-height: 500px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0 16px; 
+    }
+}
+
+/* Estilo da seção de banner */#banner {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100vh; /* Reduzindo a altura para 80% da altura da viewport */
     background: url('/img/background.avif') no-repeat center center/cover;
     display: flex;
     justify-content: center;
@@ -88,25 +143,40 @@ header .container {
     z-index: 2;
     text-align: center;
     color: white;
+    text-align: center;
 }
 
 #banner .welcome {
     font-size: 42px;
-    margin: 0 0 20px;
+    margin: 180px ;
+}
+
+@media screen and (max-width: 760px) {
+    #banner {
+        height: 60vh; /* Reduz ainda mais a altura para 60% da viewport */
+    }
+
+    #banner .welcome {
+        font-size: 28px; 
+        margin: 0 10px; 
+        padding: 0 20px; 
+    }
 }
 
 /* Estilo da seção "Sobre nós" */
 #sobre {
-    padding: 40px 0;
+    padding: 40px 20px; 
     background-color: #F0663E;
+    
 }
 
 #sobre .container {
     display: flex;
+    align-items: center;
 }
 
 .app_truckme {
-    max-width: 280px;
+    max-width: 580px;
     margin-right: 50px;
 }
 
@@ -119,15 +189,15 @@ header .container {
 }
 
 .sobre__caption {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #fff;
     text-align: start;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .sobre__title__description {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-align: justify;
     color: #fff;
@@ -148,6 +218,35 @@ header .container {
     background: #f18b6d;
 }
 
+@media screen and (max-width: 720px) {
+    #sobre .container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .app_truckme {
+        max-width: 60%; 
+        margin-bottom: 20px;
+    }
+
+    .content {
+        text-align: center; /* Centraliza o texto */
+        padding: 0 22px; /* Espaçamento interno */
+    }
+
+    .sobre__title {
+        font-size: 18px; /* Reduz o tamanho da fonte */
+    }
+
+    .sobre__caption {
+        font-size: 16px; /* Reduz o tamanho da fonte */
+    }
+
+    .sobre__title__description {
+        font-size: 16px; /* Reduz o tamanho da fonte */
+    }
+}
+
 /* Estilo da seção de serviços */
 #servicos {
     background-color: #FBF7F7;
@@ -162,10 +261,10 @@ header .container {
     font-weight: bold;
 }
 
-
 .table-container {
     width: 100%;
     overflow-x: auto;
+    margin: 0 auto; /* Centraliza a tabela */
 }
 
 table {
@@ -208,6 +307,35 @@ th {
 .card__description, .card__preco {
     font-size: 14px;
     margin-bottom: 5px;
+}
+
+@media (max-width: 1022px) {
+    .container {
+        padding: 0 20px
+    }
+
+    .table-container {
+        overflow-x: auto;
+        white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+    }
+
+    th, td {
+        font-size: 12px; 
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
 
 /* Estilo da galeria de fotos */
@@ -292,7 +420,7 @@ th {
 .contact-left-title h2 {
     font-weight: 600;
     color: #a363aa;
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 5px;
 }
 
@@ -352,46 +480,32 @@ th {
     width: 500px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-    }
-
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    #sobre .container {
-        flex-direction: column;
-    }
-
-    #sobre .sobre__description {
-        margin-left: 0;
-    }
-
-    .card__item {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .gallery-wrap {
-        flex-direction: column;
-    }
-
-    #backBtn, #nextBtn {
-        margin: 10px 0;
+@media (max-width: 720px) {
+    .container {
+        padding: 0 20px; 
     }
 
     .contact-container {
-        flex-direction: column;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+        padding: 0 10px; 
+    }
+    
+    .contact-left {
+        align-items: center; 
     }
 
-    .contact-left {
-        margin-right: 0;
+    .contact-left button {
+        width: 60%; 
+    }
+
+    .contact-inputs {
+        width: 90%; 
+    }
+
+    .contact-right img {
+        width: 250px;
+        margin-top: 5px; 
     }
 }
