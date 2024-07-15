@@ -167,6 +167,7 @@ nav a:hover {
 #sobre {
     padding: 40px 20px; 
     background-color: #F0663E;
+    height: 80vh;
     
 }
 
@@ -176,7 +177,7 @@ nav a:hover {
 }
 
 .app_truckme {
-    max-width: 580px;
+    width: 680px;
     margin-right: 50px;
 }
 
@@ -225,25 +226,25 @@ nav a:hover {
     }
 
     .app_truckme {
-        max-width: 60%; 
+        max-width: 50%; 
         margin-bottom: 20px;
     }
 
     .content {
-        text-align: center; /* Centraliza o texto */
-        padding: 0 22px; /* Espaçamento interno */
+        text-align: center; 
+        padding: 0 22px;
     }
 
     .sobre__title {
-        font-size: 18px; /* Reduz o tamanho da fonte */
+        font-size: 18px; 
     }
 
     .sobre__caption {
-        font-size: 16px; /* Reduz o tamanho da fonte */
+        font-size: 16px; 
     }
 
     .sobre__title__description {
-        font-size: 16px; /* Reduz o tamanho da fonte */
+        font-size: 16px; 
     }
 }
 
@@ -264,7 +265,7 @@ nav a:hover {
 .table-container {
     width: 100%;
     overflow-x: auto;
-    margin: 0 auto; /* Centraliza a tabela */
+    margin: 0 auto; 
 }
 
 table {
@@ -316,7 +317,7 @@ th {
 
     .table-container {
         overflow-x: auto;
-        white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+        white-space: nowrap; 
     }
 
     th, td {
@@ -341,7 +342,7 @@ th {
 /* Estilo da galeria de fotos */
 #gallery__section {
     background-color: #FBF7F7;
-    padding-bottom: 90px;
+    padding-bottom: 80px;
 }
 
 .servicos__gallery {
