@@ -1,3 +1,5 @@
+## Neste Repositorio foram criadas duas Branchs sendo uma para Html Css e Javascript e a outra (branch vuejs) para a realização do site com framework VueJs e Tests unitários.
+
 ## TruckMe
 TruckMe é um projeto web voltado para soluções inovadoras no setor de transporte e logística. O projeto inclui várias seções e funcionalidades para proporcionar uma experiência informativa e interativa aos usuários.
 ## Funcionalidades Principais
