@@ -2,6 +2,7 @@ import { mount } from '@vue/test-utils';
 import '@testing-library/jest-dom';
 import ContactFormComponent from '@/components/ContactFormComponent.vue';
 
+
 describe('ContactFormComponent', () => {
     let wrapper;
 
@@ -17,9 +18,7 @@ describe('ContactFormComponent', () => {
     });
 
     it('verifica se ocorre um erro ao enviar a mensagem', async () => {
-        // Simulando um erro no envio (você deve ajustar conforme sua lógica de erro)
         await wrapper.setData({ email: 'teste@teste.com', message: 'Mensagem de teste' });
-        // Suponha que você tenha um método para simular o erro
         await wrapper.vm.simulateError();
         await wrapper.find('form').trigger('submit.prevent');
 

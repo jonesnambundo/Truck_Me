@@ -4,14 +4,14 @@
             <div class="contact-container">
                 <form @submit.prevent="handleSubmit" class="contact-left" id="contact-form">
                     <div class="contact-left-title">
-                        <h2>{{ formTitle }}</h2>
+                        <h2>Contactos</h2>
                         <hr />
                     </div>
                     <input type="hidden" name="access_key" value="4b419ad7-41aa-4f73-9f43-cb8dedc0b2f4" />
                     <input type="text" v-model="name" placeholder="Your name" class="contact-inputs" required />
                     <input type="email" v-model="email" placeholder="Your email" class="contact-inputs" required />
                     <textarea v-model="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-                    <button type="submit">{{ buttonText }} <img src="../../src/assets/arrow_icon.png" alt="" /></button>
+                    <button type="submit">Submit <img src="../../src/assets/arrow_icon.png" alt="" /></button>
                 </form>
                 <div class="contact-right">
                     <img src="../../src/assets/right_img.png" alt="" />
@@ -24,20 +24,6 @@
 <script>
 export default {
     name: 'ContactFormComponent',
-    props: {
-        formTitle: {
-            type: String,
-            default: 'Contactos'
-        },
-        submitUrl: {
-            type: String,
-            required: true
-        },
-        buttonText: {
-            type: String,
-            default: 'Submit'
-        }
-    },
     data() {
         return {
             name: '',
@@ -59,13 +45,14 @@ export default {
                 return;
             }
 
+            // If all validations pass, submit the form
             const formData = new FormData();
             formData.append("access_key", "4b419ad7-41aa-4f73-9f43-cb8dedc0b2f4");
             formData.append("name", this.name);
             formData.append("email", this.email);
             formData.append("message", this.message);
 
-            fetch(this.submitUrl, {
+            fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: formData,
             })
@@ -89,18 +76,17 @@ export default {
     },
 };
 </script>
+
 <style scoped>
 #contatos {
     background: linear-gradient(#ffdad5, #fff7f9);
-    padding-top: 10px; 
 }
 
 .contact-container {
-    height: auto;
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px; 
+    justify-content: space-evenly;
 }
 
 .contact-left {
@@ -113,7 +99,7 @@ export default {
 .contact-left-title h2 {
     font-weight: 600;
     color: #a363aa;
-    font-size: 22px;
+    font-size: 40px;
     margin-bottom: 5px;
 }
 
@@ -123,7 +109,7 @@ export default {
     height: 5px;
     background-color: #a363aa;
     border-radius: 10px;
-    margin-bottom: 10px; /* Reduced space below the line */
+    margin-bottom: 20px;
 }
 
 .contact-inputs {
@@ -170,33 +156,6 @@ export default {
 }
 
 .contact-right img {
-    width: 300px; /* Adjusted size */
-    margin-top: 5px; /* Reduced space under the image */
-}
-
-@media (max-width: 720px) {
-    .contact-container {
-        flex-direction: column; /* Stack elements */
-        justify-content: center; /* Center items vertically */
-        align-items: center; /* Center items horizontally */
-        padding: 0 10px; /* Reduced padding */
-    }
-    
-    .contact-left {
-        align-items: center; /* Center the form */
-    }
-
-    .contact-left button {
-        width: 60%; /* Full width button */
-    }
-
-    .contact-inputs {
-        width: 90%; /* Full width inputs */
-    }
-
-    .contact-right img {
-        width: 300px; /* Reduced image size */
-        margin-top: 5px; /* Reduced space above the image */
-    }
+    width: 500px;
 }
 </style>
