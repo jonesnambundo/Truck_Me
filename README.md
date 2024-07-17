@@ -44,7 +44,7 @@ Tabela listando serviços, cada um com uma imagem, descrição e preço.Dados do
 Justificativa: Torna o componente flexível para listar diferentes serviços, adaptando-se a diferentes tipos de negócios ou contextos de serviço.
 
 ### Tests Unitarios 
-Para a realização dos testes Unitário foi usado o Jest e Vue Test Utils foi testes em dois Compnentes 
+Para a realização dos testes Unitário foi usado o Jest, Vue Test Utils e cypress em dois Compnentes 
 ## AboutComponent
 Testes realizados:
 Renderização correta de props: Verifica se o componente renderiza corretamente a imagem, o título, a legenda, a descrição e as seções adicionais com base nas props fornecidas.
@@ -53,6 +53,8 @@ Alteração de estado ao clicar no botão: Testa se o conteúdo adicional é mos
 ### ContactFormComponent
 Testes realizados:
 Renderização de título do formulário: Verifica se o título do formulário é exibido corretamente.
+verifica se os campos nome , email , mensagem estão preenchidos corretamente.
+verfica caso o nome, email e capo de mensagem esteja vazios é expetante de apresentar uma mensagem de erro.
 Envio de formulário: Testa se os dados do formulário são enviados corretamente e se o botão de envio funciona conforme esperado.
 
 ## Project setup
