@@ -21,7 +21,7 @@ header {
     padding: 10px 0;
     background-color: #fff;
     color: black;
-    position: fixed;
+    position:fixed;  /*sticky*/
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -115,7 +115,8 @@ nav a:hover {
     }
 }
 
-/* Estilo da seção de banner */#banner {
+/* Estilo da seção de banner */
+#banner {
     position: relative;
     width: 100%;
     height: 100vh; /* Reduzindo a altura para 80% da altura da viewport */
@@ -165,10 +166,9 @@ nav a:hover {
 
 /* Estilo da seção "Sobre nós" */
 #sobre {
-    padding: 40px 20px; 
+    padding: 40px 10px; 
     background-color: #F0663E;
-    height: 80vh;
-    
+    height: auto; 
 }
 
 #sobre .container {
@@ -177,14 +177,20 @@ nav a:hover {
 }
 
 .app_truckme {
-    width: 680px;
+    width: 880px;
     margin-right: 50px;
+    transform: rotateY(0deg);
+    transition: transform 1s;
+
+}
+
+.app_truckme:hover{
+    transform: rotateY(360deg);
 }
 
 .sobre__title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 40px;
     text-align: center;
     color: #fff;
 }
@@ -194,7 +200,7 @@ nav a:hover {
     font-weight: 600;
     color: #fff;
     text-align: start;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .sobre__title__description {
@@ -224,6 +230,10 @@ nav a:hover {
         flex-direction: column; 
         align-items: center; 
     }
+
+    .no-scroll {
+        overflow-y: hidden;
+    } 
 
     .app_truckme {
         max-width: 50%; 
@@ -342,18 +352,18 @@ th {
 /* Estilo da galeria de fotos */
 #gallery__section {
     background-color: #FBF7F7;
-    padding-bottom: 80px;
+    padding: 30px 0;
 }
 
 .servicos__gallery {
+    text-align: center;
     font-size: 24px;
     color: #a363aa;
-    padding: 20px 0;
-    text-align: center;
+    font-weight: bold;
 }
 
 .gallery {
-    width: 900px;
+    width: 100%;
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -384,7 +394,7 @@ th {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
+    margin: 10% auto;
 }
 
 #backBtn, #nextBtn {
@@ -399,13 +409,63 @@ th {
     transform: scale(1.1);
 }
 
+@media (max-width: 720px) {
+    .gallery {
+        max-width: 500px;
+        width: 500px;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .gallery-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 50%;
+        padding: 20px;
+    }
+        
+}
+
+@media (min-width:721px) and (max-width: 1022px) {
+    .gallery {
+        max-width: 500px;
+        width: 100%;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .gallery::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .gallery-wrap {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        width: 100%;
+    }
+        
+    .gallery-item {
+        min-width: 100px; /* Width of each item */
+        margin: 0 10px; /* Space between items */
+    }
+}
+
 /* Estilo da seção de contatos */
 #contatos {
     background: linear-gradient(#ffdad5, #fff7f9);
+    padding: 0 10px;
 }
 
 .contact-container {
-    height: 100vh;
+    padding: 40px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -421,7 +481,7 @@ th {
 .contact-left-title h2 {
     font-weight: 600;
     color: #a363aa;
-    font-size: 35px;
+    font-size: 25px;
     margin-bottom: 5px;
 }
 
@@ -482,15 +542,13 @@ th {
 }
 
 @media (max-width: 720px) {
-    .container {
-        padding: 0 20px; 
-    }
 
     .contact-container {
         flex-direction: column; 
         justify-content: center; 
         align-items: center;
-        padding: 0 10px; 
+        padding: 10px 10px; 
+        
     }
     
     .contact-left {
@@ -502,7 +560,7 @@ th {
     }
 
     .contact-inputs {
-        width: 90%; 
+        width: 290px; 
     }
 
     .contact-right img {

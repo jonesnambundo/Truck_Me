@@ -14,22 +14,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hamburger = document.querySelector(".hamburger");
     const nav = document.querySelector("nav");
-
+    
     hamburger.addEventListener("click", function () {
         nav.classList.toggle("open");
+        const icon = hamburger.querySelector("i");
+        if (nav.classList.contains("open")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
     });
 
-    let galleryIndex = 0;
-    const gallery = document.querySelector(".gallery");
-    const galleryImages = gallery.querySelectorAll("div");
+    let scrollContainer = document.querySelector(".gallery")
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
 
-    document.getElementById("nextBtn").addEventListener("click", function () {
-        galleryIndex = (galleryIndex + 1) % galleryImages.length;
-        gallery.style.transform = `translateX(-${galleryIndex * 100}%)`;
-    });
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+    })
 
-    document.getElementById("backBtn").addEventListener("click", function () {
-        galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
-        gallery.style.transform = `translateX(-${galleryIndex * 100}%)`;
-    });
+    nextBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    })
+
+    backBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -=900;
+    })
 });
